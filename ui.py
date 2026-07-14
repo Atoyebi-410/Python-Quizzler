@@ -44,7 +44,8 @@ class QuizInterface():
             q_text = self.quiz.next_question()
             self.canvas.itemconfig(self.question_text, text=q_text)
         else:
-            self.canvas.itemconfig(self.question_text, text="You've reached the end of the quiz")
+            self.canvas.itemconfig(self.question_text, text=f"You've reached the end of the quiz\n Final Score: {self.quiz.score}")
+            self.canvas.config(bg="white")
             self.right_button.config(state="disabled")
             self.wrong_button.config(state="disabled")
 
